@@ -1,0 +1,110 @@
+.gray--separator {
+  width: 100%;
+  height: 1px;
+  background-color: hsla(0, 0%, 7%, 0.1);
+}
+
+.offer--background {
+  background-color: #ebedee;
+  height: calc(100vh - 60px);
+}
+
+.offer--container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 30px;
+  width: 1280px;
+}
+
+.offer--picture > img {
+  height: 600px;
+  object-fit: cover;
+}
+
+/* -- UP PART INFORMATIONS --  */
+/* -- UP PART INFORMATIONS --  */
+/* -- UP PART INFORMATIONS --  */
+
+.offer--informations {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  width: 320px;
+}
+
+.offer--price {
+  color: #111;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.offer-details--list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.offer-details--list li {
+  display: flex;
+  padding: 5px 0;
+}
+
+.offer-details--list li span:first-child {
+  color: #999999;
+}
+
+.offer-details--list li span:last-child {
+  color: #666666;
+  font-weight: 700;
+}
+
+.offer-details--list li span {
+  flex: 1 1;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+/* -- DOWN PART INFORMATIONS --  */
+/* -- DOWN PART INFORMATIONS --  */
+/* -- DOWN PART INFORMATIONS --  */
+
+.offer--presentation .offer--name {
+  font-weight: 700;
+}
+
+.offer--presentation .offer--description {
+  margin-top: 20px;
+  color: #666;
+}
+
+.offer--presentation .offer--owner {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.offer--presentation .offer--owner-profil-picture > img {
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: cover;
+  width: 50px;
+}
+
+.buy-button {
+  background: #09b1ba;
+  border: 1px solid #09b1ba;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+  margin-top: 32px;
+  padding: 0 16px;
+  width: 100%;
+  cursor: pointer;
+}

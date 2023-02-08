@@ -1,0 +1,53 @@
+.header--container {
+  padding: 10px 0;
+  margin: auto;
+  width: 1280px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ------- LOGO VINTED -------*/
+/* ------- LOGO VINTED -------*/
+/* ------- LOGO VINTED -------*/
+
+.header--logo {
+  cursor: pointer;
+}
+.header--logo > img {
+  height: 40px;
+}
+
+/* ------- BUTTONS -------*/
+/* ------- BUTTONS -------*/
+/* ------- BUTTONS -------*/
+
+.buttons--container button {
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  /* font-family: Maison Neue; */
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+  width: 115px;
+  cursor: pointer;
+  border: 1px solid #2cb1ba;
+}
+
+.signup--button,
+.login--button {
+  color: #2cb1ba;
+  background-color: white;
+}
+
+.signup--button {
+  margin-right: 20px;
+}
+
+.sell-products--button {
+  color: white;
+  background-color: #2cb1ba;
+  margin-left: 59px;
+}

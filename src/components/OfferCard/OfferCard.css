@@ -1,0 +1,54 @@
+.offer--card {
+  cursor: pointer;
+  padding: 0 6px 16px;
+  width: 235px;
+}
+
+/* Profile Picture And Username */
+
+.offer--card .user--info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.offer--card .user--info img {
+  border-radius: 50%;
+  height: 25px;
+  margin-right: 10px;
+  object-fit: cover;
+  width: 25px;
+}
+
+.offer--card .user--info {
+  font-size: 12px;
+  color: #999999;
+}
+
+/* Offer Picture */
+
+.offer--card .picture--offer img {
+  height: 360px;
+  object-fit: cover;
+  width: 235px;
+}
+
+/* Offer Detail */
+
+.offer--card .details--offer {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.offer--card .details--offer .price--offer {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.offer--card .details--offer .size--offer,
+.offer--card .details--offer .brand--offer {
+  color: #999999;
+  font-size: 12px;
+}
