@@ -1,6 +1,7 @@
 import "./Home.css";
 import homeBanner from "../../assets/img/home-banner.jpg";
 import OfferCard from "../../components/OfferCard";
+import tearing from "../../assets/img/tearing.svg";
 
 const Home = ({ data, isLoading }) => {
   return isLoading ? (
@@ -8,7 +9,7 @@ const Home = ({ data, isLoading }) => {
   ) : (
     <>
       <section className="home-banner">
-        <div>
+        <div className="banner--image">
           <img
             alt="two people looking at and sorting their clothes"
             src={homeBanner}
@@ -17,6 +18,9 @@ const Home = ({ data, isLoading }) => {
         <div className="text--banner--container">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
           <button>Commencer à vendre</button>
+        </div>
+        <div className="tearing">
+          <img alt="tearing" src={tearing} />
         </div>
       </section>
       <section className="products">
