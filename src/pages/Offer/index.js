@@ -43,10 +43,11 @@ const Offer = () => {
             {data.product_details?.length > 0 && (
               <ul className="offer-details--list">
                 {data.product_details.map((detail, index) => {
+                  const key = Object.keys(detail)[0];
                   return (
                     <li key={index}>
-                      <span>{Object.keys(detail)[0]}</span>
-                      <span>{detail[Object.keys(detail)[0]]}</span>
+                      <span>{key}</span>
+                      <span>{detail[key]}</span>
                     </li>
                   );
                 })}

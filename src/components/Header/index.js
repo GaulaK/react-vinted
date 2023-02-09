@@ -1,8 +1,9 @@
 import "./Header.css";
 import logo from "../../assets/img/logo-vinted.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header>
       <div className="header--container">
@@ -12,7 +13,12 @@ const Header = () => {
           </div>
         </Link>
         <div className="buttons--container">
-          <button className="signup--button">S'inscrire</button>
+          <button
+            className="signup--button"
+            onClick={() => navigate("/signup")}
+          >
+            S'inscrire
+          </button>
           <button className="login--button">Se Connecter</button>
           <button className="sell-products--button">Vends tes articles</button>
         </div>
