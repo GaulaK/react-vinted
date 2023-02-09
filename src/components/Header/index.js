@@ -3,7 +3,7 @@ import logo from "../../assets/img/logo-vinted.png";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const Header = () => {
+const Header = ({ updateToken }) => {
   const navigate = useNavigate();
   return (
     <header>
@@ -18,9 +18,7 @@ const Header = () => {
             <button
               className="logout--button"
               onClick={() => {
-                Cookies.remove("token");
-                //refresh page
-                navigate("/");
+                updateToken(null);
               }}
             >
               Se déconnecter

@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
-import Cookies from "js-cookie";
 
-const Signup = () => {
+const Signup = ({ updateToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const [errorSignup, setErrorSignUp] = useState("");
+
   const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
@@ -41,7 +41,7 @@ const Signup = () => {
         data
       );
       if (response.data?.token) {
-        Cookies.set("token", response.data.token, { expires: 7 });
+        updateToken(response.data.token);
         navigate("/");
       } else {
         alert("aled ?!");

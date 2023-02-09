@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Cookies from "js-cookie";
 
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ updateToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
@@ -29,8 +28,8 @@ const Login = () => {
         data
       );
       if (response.data?.token) {
-        Cookies.set("token", response.data.token, { expires: 7 });
         setErrorLogin("");
+        updateToken(response.data.token);
         navigate("/");
       } else {
         alert("aled ?!");
