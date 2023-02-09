@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 import "./Login.css";
 
@@ -8,6 +9,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
+
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -17,8 +20,26 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const data = { email, password };
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        data
+      );
+      if (response.data?.token) {
+        Cookies.set("token", response.data.token, { expires: 7 });
+        setErrorLogin("");
+        navigate("/");
+      } else {
+        alert("aled ?!");
+      }
+    } catch (error) {
+      if (error.response.status === 400 || error.response.status === 400) {
+        setErrorLogin("Adresse email et/ou mot de passe incorrect");
+      }
+    }
   };
   return (
     <div className="login--container">

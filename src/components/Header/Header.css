@@ -25,7 +25,6 @@
 /* ------- BUTTONS -------*/
 
 .buttons--container button {
-  border: 1px solid #2cb1ba;
   border-radius: 5px;
   /* font-family: Maison Neue; */
   font-size: 12px;
@@ -33,14 +32,19 @@
   outline: none;
   width: 115px;
   cursor: pointer;
-  border: 1px solid #2cb1ba;
   font-family: inherit;
 }
 
+.logout--button {
+  color: white;
+  background-color: #c2175b;
+  border: 1px solid #c2175b;
+}
 .signup--button,
 .login--button {
   color: #2cb1ba;
   background-color: white;
+  border: 1px solid #2cb1ba;
 }
 
 .signup--button {
@@ -51,4 +55,5 @@
   color: white;
   background-color: #2cb1ba;
   margin-left: 59px;
+  border: 1px solid #2cb1ba;
 }
