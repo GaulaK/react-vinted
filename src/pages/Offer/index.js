@@ -25,7 +25,9 @@ const Offer = () => {
   }, [id]);
 
   return isLoading ? (
-    <p>Chargement en cours</p>
+    <div className="offer--background">
+      <p>Chargement en cours</p>
+    </div>
   ) : (
     <div className="offer--background">
       <div className="offer--container">

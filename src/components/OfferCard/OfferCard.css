@@ -1,6 +1,7 @@
 .offer--card {
   cursor: pointer;
-  padding: 0 6px 16px;
+  padding: 0 6px;
+  margin-bottom: 16px;
   width: 235px;
 }
 

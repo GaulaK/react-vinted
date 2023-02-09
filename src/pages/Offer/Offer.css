@@ -15,7 +15,7 @@
   justify-content: space-around;
   margin: 0 auto;
   padding: 30px;
-  width: 1280px;
+  max-width: 1280px;
 }
 
 .offer--picture > img {

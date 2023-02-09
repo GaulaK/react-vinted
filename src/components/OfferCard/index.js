@@ -22,13 +22,13 @@ const OfferCard = ({ offer }) => {
   };
   return (
     <div className="offer--card">
+      <div className="user--info">
+        {offer.owner.account.avatar?.secure_url && (
+          <img alt="profile" src={offer.owner.account.avatar.secure_url} />
+        )}
+        <span>{offer.owner.account.username}</span>
+      </div>
       <Link style={{ textDecoration: "none" }} to={`/offer/${offer._id}`}>
-        <div className="user--info">
-          {offer.owner.account.avatar?.secure_url && (
-            <img alt="profile" src={offer.owner.account.avatar.secure_url} />
-          )}
-          <span>{offer.owner.account.username}</span>
-        </div>
         <div className="picture--offer">
           <img
             alt={offer.product_description}
