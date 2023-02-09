@@ -11,9 +11,11 @@ import Login from "./pages/Login";
 
 //Components
 import Header from "./components/Header";
+import LoginModal from "./components/LoginModal";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
+  const [loginVisible, setLoginVisible] = useState(false);
 
   const updateToken = (token) => {
     if (token) {
@@ -27,7 +29,12 @@ function App() {
 
   return (
     <Router>
-      <Header updateToken={updateToken} token={token} />
+      <Header
+        updateToken={updateToken}
+        token={token}
+        loginVisible={loginVisible}
+        setLoginVisible={setLoginVisible}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
@@ -35,6 +42,12 @@ function App() {
         <Route path="/login" element={<Login updateToken={updateToken} />} />
         <Route />
       </Routes>
+      {loginVisible && (
+        <LoginModal
+          setLoginVisible={setLoginVisible}
+          updateToken={updateToken}
+        />
+      )}
     </Router>
   );
 }

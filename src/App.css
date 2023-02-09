@@ -3,3 +3,11 @@
 body {
   font-family: "Maison Neue", sans-serif;
 }
+
+.App {
+  position: relative;
+}
+
+*:focus {
+  outline: none;
+}

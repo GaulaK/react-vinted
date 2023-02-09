@@ -2,7 +2,7 @@ import "./Header.css";
 import logo from "../../assets/img/logo-vinted.png";
 import { Link, useNavigate } from "react-router-dom";
 
-const Header = ({ updateToken, token }) => {
+const Header = ({ updateToken, token, loginVisible, setLoginVisible }) => {
   const navigate = useNavigate();
   return (
     <header>
@@ -35,6 +35,16 @@ const Header = ({ updateToken, token }) => {
                 onClick={() => navigate("/login")}
               >
                 Se Connecter
+              </button>
+              <button
+                className="login--button"
+                onClick={() => {
+                  setLoginVisible(!loginVisible);
+                  const body = document.querySelector("body");
+                  body.style.overflow = "hidden";
+                }}
+              >
+                ?
               </button>
             </>
           )}
