@@ -19,7 +19,9 @@ const Header = () => {
           >
             S'inscrire
           </button>
-          <button className="login--button">Se Connecter</button>
+          <button className="login--button" onClick={() => navigate("/login")}>
+            Se Connecter
+          </button>
           <button className="sell-products--button">Vends tes articles</button>
         </div>
       </div>

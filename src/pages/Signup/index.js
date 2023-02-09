@@ -87,8 +87,8 @@ const Signup = () => {
           S'inscrire
         </button>
       </form>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <p className="already-acount--button">
+      <Link to="/login" style={{ textDecoration: "none" }}>
+        <p className="already-account--button">
           Tu as déjà un compte ? Connecte-toi !
         </p>
       </Link>
