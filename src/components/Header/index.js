@@ -19,6 +19,7 @@ const Header = () => {
               className="logout--button"
               onClick={() => {
                 Cookies.remove("token");
+                //refresh page
                 navigate("/");
               }}
             >

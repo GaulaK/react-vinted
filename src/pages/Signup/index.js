@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -8,8 +8,9 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [newsletter, setNewsletter] = useState(false);
   const [errorSignup, setErrorSignUp] = useState("");
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     const value = event.target.value;
@@ -26,22 +27,26 @@ const Signup = () => {
     setPassword(value);
   };
 
+  const handleNewsletterChange = () => {
+    setNewsletter(!newsletter);
+  };
+
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const data = { username, email, password };
-      //   console.log(data);
+      const data = { username, email, password, newsletter };
+      console.log(data);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         data
       );
       if (response.data?.token) {
         Cookies.set("token", response.data.token, { expires: 7 });
+        navigate("/");
       } else {
         alert("aled ?!");
       }
       setErrorSignUp("");
-      console.log(response.data);
     } catch (error) {
       if (error.response.status === 409) {
         setErrorSignUp("Adresse email déjà utilisée !");
@@ -74,7 +79,13 @@ const Signup = () => {
         />
         <div className="checkbox--container">
           <div>
-            <input type="checkbox" value={true} name="newsletter" />
+            <input
+              type="checkbox"
+              //   value={true}
+              name="newsletter"
+              checked={newsletter}
+              onChange={handleNewsletterChange}
+            />
             <span>S'inscrire à notre newsletter</span>
           </div>
           <p className="form--condition">
