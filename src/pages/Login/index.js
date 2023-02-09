@@ -35,7 +35,7 @@ const Login = ({ updateToken }) => {
         alert("aled ?!");
       }
     } catch (error) {
-      if (error.response.status === 400 || error.response.status === 400) {
+      if (error.response.status === 400 || error.response.status === 401) {
         setErrorLogin("Adresse email et/ou mot de passe incorrect");
       }
     }
