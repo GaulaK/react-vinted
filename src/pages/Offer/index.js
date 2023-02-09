@@ -24,7 +24,6 @@ const Offer = () => {
     fetchData();
   }, [id]);
 
-  console.log("oui");
   return isLoading ? (
     <p>Chargement en cours</p>
   ) : (
@@ -41,9 +40,9 @@ const Offer = () => {
             <p className="offer--price">{`${data.product_price} €`}</p>
             {data.product_details?.length > 0 && (
               <ul className="offer-details--list">
-                {data.product_details.map((detail) => {
+                {data.product_details.map((detail, index) => {
                   return (
-                    <li>
+                    <li key={index}>
                       <span>{Object.keys(detail)[0]}</span>
                       <span>{detail[Object.keys(detail)[0]]}</span>
                     </li>
