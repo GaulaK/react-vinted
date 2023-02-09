@@ -27,7 +27,7 @@ function App() {
 
   return (
     <Router>
-      <Header updateToken={updateToken} />
+      <Header updateToken={updateToken} token={token} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />

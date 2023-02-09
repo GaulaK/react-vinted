@@ -1,9 +1,8 @@
 import "./Header.css";
 import logo from "../../assets/img/logo-vinted.png";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 
-const Header = ({ updateToken }) => {
+const Header = ({ updateToken, token }) => {
   const navigate = useNavigate();
   return (
     <header>
@@ -14,7 +13,7 @@ const Header = ({ updateToken }) => {
           </div>
         </Link>
         <div className="buttons--container">
-          {Cookies.get("token") ? (
+          {token ? (
             <button
               className="logout--button"
               onClick={() => {
@@ -25,7 +24,6 @@ const Header = ({ updateToken }) => {
             </button>
           ) : (
             <>
-              {" "}
               <button
                 className="signup--button"
                 onClick={() => navigate("/signup")}
