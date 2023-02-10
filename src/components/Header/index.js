@@ -1,9 +1,9 @@
 import "./Header.css";
 import logo from "../../assets/img/logo-vinted.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = ({ updateToken, token, loginVisible, setLoginVisible }) => {
-  const navigate = useNavigate();
+const Header = ({ updateToken, token, setModalContent }) => {
+  // const navigate = useNavigate();
   return (
     <header>
       <div className="header--container">
@@ -24,27 +24,37 @@ const Header = ({ updateToken, token, loginVisible, setLoginVisible }) => {
             </button>
           ) : (
             <>
-              <button
+              {/* <button
                 className="signup--button"
                 onClick={() => navigate("/signup")}
+              >
+                S'inscrire
+              </button> */}
+              {/* <button
+                className="login--button"
+                onClick={() => navigate("/login")}
+              >
+                Se Connecter
+              </button> */}
+              <button
+                className="signup--button"
+                onClick={() => {
+                  setModalContent("signup");
+                  const body = document.querySelector("body");
+                  body.style.overflow = "hidden";
+                }}
               >
                 S'inscrire
               </button>
               <button
                 className="login--button"
-                onClick={() => navigate("/login")}
-              >
-                Se Connecter
-              </button>
-              <button
-                className="login--button"
                 onClick={() => {
-                  setLoginVisible(!loginVisible);
+                  setModalContent("login");
                   const body = document.querySelector("body");
                   body.style.overflow = "hidden";
                 }}
               >
-                ?
+                Se Connecter
               </button>
             </>
           )}

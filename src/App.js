@@ -6,16 +6,19 @@ import Cookies from "js-cookie";
 //Pages
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
 
 //Components
 import Header from "./components/Header";
-import LoginModal from "./components/LoginModal";
+import Modal from "./components/Modal";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+library.add(faXmark);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
-  const [loginVisible, setLoginVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const updateToken = (token) => {
     if (token) {
@@ -32,19 +35,18 @@ function App() {
       <Header
         updateToken={updateToken}
         token={token}
-        loginVisible={loginVisible}
-        setLoginVisible={setLoginVisible}
+        modalContent={modalContent}
+        setModalContent={setModalContent}
       />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/signup" element={<Signup updateToken={updateToken} />} />
-        <Route path="/login" element={<Login updateToken={updateToken} />} />
         <Route />
       </Routes>
-      {loginVisible && (
-        <LoginModal
-          setLoginVisible={setLoginVisible}
+      {modalContent && (
+        <Modal
+          modalContent={modalContent}
+          setModalContent={setModalContent}
           updateToken={updateToken}
         />
       )}

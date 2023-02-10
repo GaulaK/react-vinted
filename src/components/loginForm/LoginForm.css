@@ -1,0 +1,47 @@
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+.login--form {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  margin: auto;
+}
+
+.login--form > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.login--form > input::placeholder {
+  color: #cbccd7;
+  font-size: 16px;
+}
+
+.form--login-button {
+  height: 45px;
+  margin-top: 20px;
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.not-account--button {
+  color: #2cb1ba;
+  font-size: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.error--login {
+  color: red;
+  font-size: 12px;
+}
