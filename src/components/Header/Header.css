@@ -57,3 +57,95 @@
   margin-left: 59px;
   border: 1px solid #2cb1ba;
 }
+
+/* --------------- FILTERS CONTAINER --------------- */
+/* --------------- FILTERS CONTAINER --------------- */
+/* --------------- FILTERS CONTAINER --------------- */
+
+.filters--container {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-bar--input {
+  background-color: #f5f6f7;
+  border: none;
+  border-radius: 5px;
+  font-family: Maison Neue;
+  font-size: 16px;
+  height: 37px;
+  outline: none;
+  padding-left: 40px;
+  width: 590px;
+}
+
+.fa-magnifying-glass {
+  color: #bbbbbb;
+  left: 7px;
+  position: absolute;
+  top: 12px;
+}
+
+.filters--sort {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.filters--sort p {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+/* -------- ORDER SORT -------- */
+/* -------- ORDER SORT -------- */
+/* -------- ORDER SORT -------- */
+
+.switch--container {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+}
+
+.switch--container input {
+  display: none;
+}
+
+.switch--container .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2cb1ba;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.switch--container .slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 50%;
+  border: 1px solid #bbbbbb;
+  box-sizing: border-box;
+}
+
+.switch--container input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}

@@ -12,13 +12,15 @@ import Header from "./components/Header";
 import Modal from "./components/Modal";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-library.add(faXmark);
+import { faXmark, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+library.add(faXmark, faMagnifyingGlass);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   // const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState(false);
 
   const updateToken = (token) => {
     if (token) {
@@ -29,7 +31,6 @@ function App() {
       setToken(null);
     }
   };
-
   return (
     <Router>
       <Header
@@ -37,9 +38,13 @@ function App() {
         token={token}
         modalContent={modalContent}
         setModalContent={setModalContent}
+        search={search}
+        setSearch={setSearch}
+        sort={sort}
+        setSort={setSort}
       />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home search={search} sort={sort} />} />
         <Route path="/offer/:id" element={<Offer />} />
         <Route />
       </Routes>

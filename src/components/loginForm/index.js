@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import "./LoginForm.css";
@@ -8,8 +7,6 @@ const LoginModal = ({ updateToken, setModalContent }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
-
-  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -33,7 +30,6 @@ const LoginModal = ({ updateToken, setModalContent }) => {
         setModalContent(null);
         const body = document.querySelector("body");
         body.style.overflow = "auto";
-        navigate("/");
       } else {
         alert("aled ?!");
       }

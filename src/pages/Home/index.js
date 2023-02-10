@@ -5,25 +5,26 @@ import tearing from "../../assets/img/tearing.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Home = () => {
+const Home = ({ search, sort }) => {
   const [data, setData] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/offers?${
+            sort ? "sort=price-desc" : "sort=price-asc"
+          }${search && `title=${search}`}`
+        );
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchData();
-  }, []);
+  }, [search, sort]);
 
   return isLoading ? (
     <p>Chargement en cours</p>
