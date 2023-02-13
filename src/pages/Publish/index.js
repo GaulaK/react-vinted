@@ -5,7 +5,7 @@ import axios from "axios";
 
 import Dropzone from "../../components/Dropzone";
 
-const Publish = ({ token, previousPage, setPreviousPage }) => {
+const Publish = ({ token }) => {
   const [picture, setPicture] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -57,12 +57,8 @@ const Publish = ({ token, previousPage, setPreviousPage }) => {
     }
   };
 
-  if (!token) {
-    setPreviousPage("/publish");
-  }
-
   return !token ? (
-    <Navigate to="/login" previousPage={previousPage} />
+    <Navigate to="/login" state={{ previousPage: "/publish" }} />
   ) : (
     <>
       <main>

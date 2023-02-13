@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 import "./Login.css";
 
-const Login = ({ updateToken, previousPage }) => {
+const Login = ({ updateToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
+  const previousPage = location.state?.previousPage
+    ? location.state?.previousPage
+    : "/";
+  console.log(previousPage);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -30,7 +36,7 @@ const Login = ({ updateToken, previousPage }) => {
       if (response.data?.token) {
         setErrorLogin("");
         updateToken(response.data.token);
-        navigate(previousPage);
+        navigate(previousPage ? previousPage : "/");
       } else {
         alert("aled ?!");
       }
@@ -59,7 +65,11 @@ const Login = ({ updateToken, previousPage }) => {
         />
         <button className="form--login-button">Se connecter</button>
       </form>
-      <Link to="/signup" style={{ textDecoration: "none" }}>
+      <Link
+        to="/signup"
+        style={{ textDecoration: "none" }}
+        state={{ previousPage: previousPage }}
+      >
         <p className="not-account--button">
           Pas encore de compte ? Inscris-toi !
         </p>

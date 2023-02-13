@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
 
-const Signup = ({ updateToken, previousPage }) => {
+const Signup = ({ updateToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +11,12 @@ const Signup = ({ updateToken, previousPage }) => {
   const [errorSignup, setErrorSignUp] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
+  const previousPage = location.state?.previousPage
+    ? location.state?.previousPage
+    : "/";
+  console.log(previousPage);
 
   const handleUsernameChange = (event) => {
     const value = event.target.value;
@@ -42,7 +48,7 @@ const Signup = ({ updateToken, previousPage }) => {
       );
       if (response.data?.token) {
         updateToken(response.data.token);
-        navigate(previousPage);
+        navigate(previousPage ? previousPage : "/");
       } else {
         alert("aled ?!");
       }
@@ -98,7 +104,11 @@ const Signup = ({ updateToken, previousPage }) => {
           S'inscrire
         </button>
       </form>
-      <Link to="/login" style={{ textDecoration: "none" }}>
+      <Link
+        to="/login"
+        style={{ textDecoration: "none" }}
+        state={{ previousPage: previousPage }}
+      >
         <p className="already-account--button">
           Tu as déjà un compte ? Connecte-toi !
         </p>
