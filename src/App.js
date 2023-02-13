@@ -20,10 +20,11 @@ library.add(faXmark, faMagnifyingGlass);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
-  // const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState(false);
+  // memorize the last page, to redirect after a login/signup
+  const [previousPage, setPreviousPage] = useState("/");
 
   const updateToken = (token) => {
     if (token) {
@@ -49,9 +50,28 @@ function App() {
       <Routes>
         <Route path="/" element={<Home search={search} sort={sort} />} />
         <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/publish" element={<Publish token={token} />} />
-        <Route path="/login" element={<Login updateToken={updateToken} />} />
-        <Route path="/signup" element={<Signup updateToken={updateToken} />} />
+        <Route
+          path="/publish"
+          element={
+            <Publish
+              token={token}
+              setPreviousPage={setPreviousPage}
+              previousPage={previousPage}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Login updateToken={updateToken} previousPage={previousPage} />
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Signup updateToken={updateToken} previousPage={previousPage} />
+          }
+        />
         <Route />
       </Routes>
       {modalContent && (

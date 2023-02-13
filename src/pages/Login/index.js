@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./Login.css";
 
-const Login = ({ updateToken }) => {
+const Login = ({ updateToken, previousPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
@@ -30,7 +30,7 @@ const Login = ({ updateToken }) => {
       if (response.data?.token) {
         setErrorLogin("");
         updateToken(response.data.token);
-        navigate("/");
+        navigate(previousPage);
       } else {
         alert("aled ?!");
       }

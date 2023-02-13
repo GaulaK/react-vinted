@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
 
-const Signup = ({ updateToken }) => {
+const Signup = ({ updateToken, previousPage }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +42,7 @@ const Signup = ({ updateToken }) => {
       );
       if (response.data?.token) {
         updateToken(response.data.token);
-        navigate("/");
+        navigate(previousPage);
       } else {
         alert("aled ?!");
       }
