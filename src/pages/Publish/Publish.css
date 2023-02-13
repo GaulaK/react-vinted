@@ -1,0 +1,103 @@
+main {
+  background-color: #ebebeb;
+}
+
+.publish--container {
+  margin: 0 auto;
+  width: 1280px;
+}
+
+.publish--container h2 {
+  font-family: Maison Neue;
+  font-size: 24px;
+  padding-top: 40px;
+}
+
+.picture-input--container,
+.title-description-input--container,
+.details-input--container,
+.price-input--container {
+  background-color: white;
+  box-shadow: 0 0 2px grey;
+  margin: 20px 0;
+}
+
+.picture-input--container {
+  padding: 24px;
+}
+
+.field--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.title-description-input--container > .field--container:not(:last-child),
+.details-input--container > .field--container:not(:last-child),
+.price-input--container > .field--container:not(:last-child) {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.field--container > input {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: Maison Neue;
+  font-size: 16px;
+  width: 50%;
+}
+
+.field--container > textarea {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: Maison Neue;
+  font-size: 16px;
+  resize: none;
+  width: 50%;
+}
+
+.field--container > input::placeholder,
+.field--container > textarea::placeholder {
+  color: #b3b0b0;
+}
+
+.submit--container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit--container > input {
+  background-color: #0ab1ba;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  margin: 50px 0;
+  font: inherit;
+  padding: 15px 12px;
+}
+
+.checkbox-price {
+  width: 50%;
+}
+
+.checkbox-price > input {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: Maison Neue;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.checkbox-price > input::placeholder {
+  color: #b3b0b0;
+}
+.checkbox-price > input:first-child {
+  margin-right: 25px;
+}
+
+.checkbox-price span {
+  margin-left: 15px;
+}

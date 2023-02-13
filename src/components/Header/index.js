@@ -1,6 +1,6 @@
 import "./Header.css";
 import logo from "../../assets/img/logo-vinted.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import PriceIntervalBar from "../PriceIntervalBar";
 
@@ -13,6 +13,7 @@ const Header = ({
   sort,
   setSort,
 }) => {
+  const navigate = useNavigate();
   return (
     <header>
       <div className="header--container">
@@ -97,7 +98,12 @@ const Header = ({
               </button>
             </>
           )}
-          <button className="sell-products--button">Vends tes articles</button>
+          <button
+            className="sell-products--button"
+            onClick={() => navigate("/publish")}
+          >
+            Vends tes articles
+          </button>
         </div>
       </div>
     </header>

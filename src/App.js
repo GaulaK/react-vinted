@@ -6,6 +6,8 @@ import Cookies from "js-cookie";
 //Pages
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 //Components
 import Header from "./components/Header";
@@ -13,6 +15,7 @@ import Modal from "./components/Modal";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faXmark, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Publish from "./pages/Publish";
 library.add(faXmark, faMagnifyingGlass);
 
 function App() {
@@ -46,6 +49,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home search={search} sort={sort} />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/login" element={<Login updateToken={updateToken} />} />
+        <Route path="/signup" element={<Signup updateToken={updateToken} />} />
         <Route />
       </Routes>
       {modalContent && (

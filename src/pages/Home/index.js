@@ -15,7 +15,7 @@ const Home = ({ search, sort }) => {
         const response = await axios.get(
           `https://lereacteur-vinted-api.herokuapp.com/offers?${
             sort ? "sort=price-desc" : "sort=price-asc"
-          }${search && `title=${search}`}`
+          }${search && `&title=${search}`}`
         );
         setData(response.data);
         setIsLoading(false);
