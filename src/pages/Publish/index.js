@@ -3,8 +3,10 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
+import Dropzone from "../../components/Dropzone";
+
 const Publish = ({ token }) => {
-  const [picture, setPicture] = useState({});
+  const [picture, setPicture] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
@@ -23,7 +25,7 @@ const Publish = ({ token }) => {
       formData.append("picture", picture);
       formData.append("title", title);
       formData.append("description", description);
-      formData.append("price", price);
+      formData.append("price", price.replace(",", ".").replace(" ", ""));
       formData.append("size", size);
       formData.append("color", color);
       formData.append("condition", condition);
@@ -63,11 +65,7 @@ const Publish = ({ token }) => {
           <h2>Vends ton article</h2>
           <form onSubmit={handleSubmit}>
             <div className="picture-input--container">
-              <input
-                type="file"
-                name="picture"
-                onChange={(event) => setPicture(event.target.files[0])}
-              />
+              <Dropzone setPicture={setPicture} picture={picture} />
             </div>
             <div className="title-description-input--container">
               <div className="field--container">
