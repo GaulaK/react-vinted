@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Modal.css";
-import LoginModal from "../loginForm";
-import SignModal from "../SignUpForm";
+import LoginForm from "../loginForm";
+import SignUpForm from "../SignUpForm";
 
 const Modal = ({ updateToken, modalContent, setModalContent }) => {
   return (
@@ -37,13 +37,13 @@ const Modal = ({ updateToken, modalContent, setModalContent }) => {
             </button>
           </div>
           {modalContent === "login" && (
-            <LoginModal
+            <LoginForm
               updateToken={updateToken}
               setModalContent={setModalContent}
             />
           )}
           {modalContent === "signup" && (
-            <SignModal
+            <SignUpForm
               updateToken={updateToken}
               setModalContent={setModalContent}
             />

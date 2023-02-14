@@ -13,6 +13,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
+  height: 45px;
 }
 
 .offer--card .user--info img {

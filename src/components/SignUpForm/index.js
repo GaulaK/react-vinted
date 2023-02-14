@@ -5,6 +5,7 @@ import axios from "axios";
 import "./SignUpForm.css";
 
 const SignUpForm = ({ updateToken, setModalContent }) => {
+  const [avatar, setAvatar] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,10 +36,15 @@ const SignUpForm = ({ updateToken, setModalContent }) => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const data = { username, email, password, newsletter };
+      const data = { username, email, password, newsletter, avatar };
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        data
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
       if (response.data?.token) {
         updateToken(response.data.token);
@@ -80,6 +86,16 @@ const SignUpForm = ({ updateToken, setModalContent }) => {
           value={password}
           onChange={handlePasswordChange}
         />
+        <div className="profil-picture--container">
+          <label htmlFor="profile-picture">Photo de profil</label>
+          <input
+            type="file"
+            name="profile-picture"
+            onChange={(event) => {
+              setAvatar(event.target.files[0]);
+            }}
+          />
+        </div>
         <div className="checkbox--container">
           <div>
             <input

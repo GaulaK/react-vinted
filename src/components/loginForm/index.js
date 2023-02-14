@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./LoginForm.css";
 
-const LoginModal = ({ updateToken, setModalContent }) => {
+const LoginForm = ({ updateToken, setModalContent }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
@@ -72,4 +72,4 @@ const LoginModal = ({ updateToken, setModalContent }) => {
   );
 };
 
-export default LoginModal;
+export default LoginForm;

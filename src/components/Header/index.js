@@ -47,9 +47,7 @@ const Header = ({
               />
               <span className="slider"></span>
             </label>
-
-            {/* <p>Prix entre :</p> */}
-            {/* <PriceIntervalBar /> */}
+            {/* TODO: Add price interval filter */}
           </div>
         </div>
         <div className="buttons--container">
@@ -64,18 +62,6 @@ const Header = ({
             </button>
           ) : (
             <>
-              {/* <button
-                className="signup--button"
-                onClick={() => navigate("/signup")}
-              >
-                S'inscrire
-              </button> */}
-              {/* <button
-                className="login--button"
-                onClick={() => navigate("/login")}
-              >
-                Se Connecter
-              </button> */}
               <button
                 className="signup--button"
                 onClick={() => {

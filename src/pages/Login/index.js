@@ -11,11 +11,10 @@ const Login = ({ updateToken }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location.state);
+
   const previousPage = location.state?.previousPage
     ? location.state?.previousPage
     : "/";
-  console.log(previousPage);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
