@@ -49,7 +49,7 @@ const Payment = ({ token }) => {
             <span>Total</span>
             <span>{totalPrice} €</span>
           </div>
-          <p>
+          <p className="last-step">
             Il ne vous reste plus qu'une étape pour vour offrir{" "}
             <span>{offer.product_name}. </span>Vous allez payer{" "}
             <span>{totalPrice} €</span> (frais de protection et frais de port
