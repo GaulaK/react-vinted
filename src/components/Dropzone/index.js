@@ -40,6 +40,7 @@ const Dropzone = ({ picture, setPicture }) => {
               URL.revokeObjectURL(picture.preview);
             }}
             onClick={() => {
+              //delete picture if click on it
               setPicture(null);
             }}
           />

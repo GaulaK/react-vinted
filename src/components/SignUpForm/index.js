@@ -101,7 +101,6 @@ const SignUpForm = ({ updateToken, setModalContent }) => {
           <div>
             <input
               type="checkbox"
-              //   value={true}
               name="newsletter"
               checked={newsletter}
               onChange={handleNewsletterChange}
@@ -122,6 +121,7 @@ const SignUpForm = ({ updateToken, setModalContent }) => {
       <p
         className="already-account--button"
         onClick={() => {
+          // switch modal type from signup to login
           setModalContent("login");
         }}
       >

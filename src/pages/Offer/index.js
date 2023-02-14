@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import Spinner from "../../components/Spinner";
+
 const Offer = () => {
   const { id } = useParams();
   const [data, setData] = useState(0);
@@ -26,7 +28,7 @@ const Offer = () => {
 
   return isLoading ? (
     <div className="offer--background">
-      <p>Chargement en cours</p>
+      <Spinner />
     </div>
   ) : (
     <div className="offer--background">

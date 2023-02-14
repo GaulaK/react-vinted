@@ -18,8 +18,16 @@
   max-width: 1280px;
 }
 
-.offer--picture > img {
+.offer--picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 600px;
+  width: 800px;
+}
+.offer--picture > img {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
 }
 

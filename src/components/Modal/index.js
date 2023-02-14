@@ -10,6 +10,7 @@ const Modal = ({ updateToken, modalContent, setModalContent, setUser }) => {
       className="modal-root"
       onClick={() => {
         setModalContent(null);
+        // unblock scroll page
         const body = document.querySelector("body");
         body.style.overflow = "auto";
       }}
@@ -26,6 +27,7 @@ const Modal = ({ updateToken, modalContent, setModalContent, setUser }) => {
               className="close-modal--button"
               onClick={() => {
                 setModalContent(null);
+                // unblock scroll page
                 const body = document.querySelector("body");
                 body.style.overflow = "auto";
               }}

@@ -3,6 +3,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
 
+// TODO: Merge with SignUpForm
+// TODO: Prevent the opening of Modal on this page
 const Signup = ({ updateToken }) => {
   const [avatar, setAvatar] = useState(null);
   const [username, setUsername] = useState("");

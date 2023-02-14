@@ -22,6 +22,12 @@
   cursor: pointer;
 }
 
+.disabled {
+  border-color: #666666;
+  background: #666666;
+  cursor: not-allowed;
+}
+
 .succeeded-payement {
   display: flex;
   justify-content: center;

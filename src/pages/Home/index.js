@@ -3,9 +3,14 @@ import homeBanner from "../../assets/img/home-banner.jpg";
 import OfferCard from "../../components/OfferCard";
 import tearing from "../../assets/img/tearing.svg";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import Spinner from "../../components/Spinner";
+
 const Home = ({ search, sort }) => {
+  const navigate = useNavigate();
+
   const [data, setData] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,7 +32,7 @@ const Home = ({ search, sort }) => {
   }, [search, sort]);
 
   return isLoading ? (
-    <p>Chargement en cours</p>
+    <Spinner />
   ) : (
     <>
       <section className="home-banner">
@@ -39,7 +44,9 @@ const Home = ({ search, sort }) => {
         </div>
         <div className="text--banner--container">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
-          <button>Commencer à vendre</button>
+          <button onClick={() => navigate("/publish")}>
+            Commencer à vendre
+          </button>
         </div>
         <div className="tearing">
           <img alt="tearing" src={tearing} />

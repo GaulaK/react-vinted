@@ -28,6 +28,7 @@ const LoginForm = ({ updateToken, setModalContent }) => {
         setErrorLogin("");
         updateToken(response.data.token);
         setModalContent(null);
+        // unlock scroll
         const body = document.querySelector("body");
         body.style.overflow = "auto";
       } else {
@@ -63,6 +64,7 @@ const LoginForm = ({ updateToken, setModalContent }) => {
       <p
         className="not-account--button"
         onClick={() => {
+          // switch modal type from login to signup
           setModalContent("signup");
         }}
       >

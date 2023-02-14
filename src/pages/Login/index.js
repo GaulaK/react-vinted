@@ -4,6 +4,8 @@ import axios from "axios";
 
 import "./Login.css";
 
+// TODO: Merge with LoginForm
+// TODO: Prevent the opening of Modal on this page
 const Login = ({ updateToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

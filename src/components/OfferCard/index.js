@@ -2,6 +2,7 @@ import "./OfferCard.css";
 import { Link } from "react-router-dom";
 
 const OfferCard = ({ offer }) => {
+  // Search if Offer has a brand to display it under the picture, else return undefined
   const findBrand = (offer) => {
     const details = offer.product_details;
     for (let index = 0; index < details.length; index++) {
@@ -11,6 +12,8 @@ const OfferCard = ({ offer }) => {
     }
     return undefined;
   };
+
+  // Search if Offer has a size to display it under the picture, else return undefined
   const findSize = (offer) => {
     const details = offer.product_details;
     for (let index = 0; index < details.length; index++) {
@@ -24,6 +27,7 @@ const OfferCard = ({ offer }) => {
     <div className="offer--card">
       <div className="user--info">
         {offer.owner.account.avatar?.secure_url && (
+          // Check if user has a profile picture
           <img alt="profile" src={offer.owner.account.avatar.secure_url} />
         )}
         <span>{offer.owner.account.username}</span>
