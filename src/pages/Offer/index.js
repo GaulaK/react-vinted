@@ -1,6 +1,6 @@
 import "./Offer.css";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -72,7 +72,13 @@ const Offer = () => {
               </p>
             </div>
           </div>
-          <button className="buy-button">Acheter</button>
+          <Link
+            className="buy-button"
+            to="/payment"
+            state={{ offer: data, previousPage: `/offer/${id}` }}
+          >
+            Acheter
+          </Link>
         </div>
       </div>
     </div>

@@ -37,6 +37,7 @@ const SignUpForm = ({ updateToken, setModalContent }) => {
     try {
       event.preventDefault();
       const data = { username, email, password, newsletter, avatar };
+      console.log(data);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         data,

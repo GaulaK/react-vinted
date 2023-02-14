@@ -4,7 +4,7 @@ import "./Modal.css";
 import LoginForm from "../loginForm";
 import SignUpForm from "../SignUpForm";
 
-const Modal = ({ updateToken, modalContent, setModalContent }) => {
+const Modal = ({ updateToken, modalContent, setModalContent, setUser }) => {
   return (
     <div
       className="modal-root"
@@ -40,12 +40,14 @@ const Modal = ({ updateToken, modalContent, setModalContent }) => {
             <LoginForm
               updateToken={updateToken}
               setModalContent={setModalContent}
+              setUser={setUser}
             />
           )}
           {modalContent === "signup" && (
             <SignUpForm
               updateToken={updateToken}
               setModalContent={setModalContent}
+              setUser={setUser}
             />
           )}
         </div>

@@ -1,0 +1,30 @@
+.payment--form {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgb(50 50 93 / 15%);
+  margin: 10px 0 20px;
+  padding: 10px 14px;
+}
+
+.submit-payment--button {
+  background: #00c06d;
+  border: 1px solid;
+  border-color: #00c06d;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  height: 44px;
+  line-height: 22px;
+  margin-top: 8px;
+  padding: 0 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.succeeded-payement {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 0;
+}

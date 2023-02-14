@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Payment from "./pages/Payment";
 
 //Components
 import Header from "./components/Header";
@@ -51,6 +52,7 @@ function App() {
         <Route path="/publish" element={<Publish token={token} />} />
         <Route path="/login" element={<Login updateToken={updateToken} />} />
         <Route path="/signup" element={<Signup updateToken={updateToken} />} />
+        <Route path="/payment" element={<Payment token={token} />} />
         <Route />
       </Routes>
       {modalContent && (
