@@ -1,6 +1,6 @@
 .payment-page--background {
   background: #ebedee;
-  height: 90vh;
+  height: calc(100vh - 65px);
   display: flex;
   justify-content: center;
 }
